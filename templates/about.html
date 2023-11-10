@@ -18,42 +18,44 @@
 {% for member in company %}
 
 <div class="row featurette">
+
   {% if loop.index % 2 != 0 %}
-  <div class="col-md-7">
-    <h3>
-      <a href="/about/{{ member.url }}">{{ loop.index }}. {{ member.name }}</a>
-    </h3>
-    <p>{{ member.description}}</p>
-  </div>
-  <div class="col-md-5">
-    <img
-      src="{{ member.image_source}}"
-      alt=""
-      class="featurette-image image-responsive"
-    />
-  </div>
 
-  {% else %}
-  <div class="col-md-5">
-    <img
-      src="{{ member.image_source}}"
-      alt=""
-      class="featurette-image image-responsive"
-    />
-  </div>
+    <div class="col-md-7">
+        <h3>
+        <a href="/about/{{ member.url }}">{{ loop.index }}. {{ member.name }}</a>
+        </h3>
+        <p>{{ member.description}}</p>
+    </div>
+    <div class="col-md-5">
+        <img
+        src="{{ member.image_source}}"
+        alt=""
+        class="featurette-image image-responsive"
+        />
+    </div>
 
-  <div class="col-md-7">
-    <h3>
-      <a href="/about/{{ member.url }}">{{ loop.index }}. {{ member.name }}</a>
-    </h3>
-    <p>{{ member.description}}</p>
-  </div>
+    {% else %}
+    <div class="col-md-5">
+        <img
+        src="{{ member.image_source}}"
+        alt=""
+        class="featurette-image image-responsive"
+        />
+    </div>
 
-  {% endif %}
-</div>
+    <div class="col-md-7">
+        <h3>
+        <a href="/about/{{ member.url }}">{{ loop.index }}. {{ member.name }}</a>
+        </h3>
+        <p>{{ member.description}}</p>
+    </div>
 
-{% if loop.index != loop.length %}
+    {% endif %}
+    </div>
 
-<hr class="featurette-divider" />
+    {% if loop.index != loop.length %}
 
-{% endif %} {% endfor %} {% endblock %}
+    <hr class="featurette-divider" />
+
+    {% endif %} {% endfor %} {% endblock %}
